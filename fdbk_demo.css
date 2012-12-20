@@ -1,0 +1,230 @@
+html {
+  background: url(noise.png) #f9f9f9;
+  font-family: "Open Sans", sans-serif;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  margin: 0;
+}
+
+fieldset {
+  border: none;
+  margin: 5px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+legend {
+  font-size: 2em;
+  padding: 10px 0;
+}
+
+textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px 10px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  background-color: #dbe0e4;
+  border: 1px solid #b1bac1;
+  -moz-box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.07);
+  box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.07);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 1.4em;
+  color: #343434;
+  text-shadow: 0 1px 1px #ffffff;
+}
+
+header {
+  height: 60px; width: 100%;
+  margin-bottom: 140px;
+  background-color: #ffffff;
+}
+
+header > * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+header .logo {
+  background: url(bg-logo.gif) no-repeat center center #eaea4e;
+  height: 100%;
+  width: 40%;
+  position: relative;
+  float: left;
+}
+
+header .logo::after {
+  content: '\a';
+  display: block;
+  position: absolute;
+  right: -50px;
+  border: 30px solid transparent;
+  border-left: 20px solid #e9ea4e;
+}
+
+header .tagline {
+  float: left;
+  width: 60%; height: 100%;
+  padding-left: 40px;
+  background-color: #424341;
+  color: #fcfcfc;
+  font-size: 1.2em;
+  vertical-align: middle;
+  line-height: 60px;
+  text-align: center;
+}
+
+.light_text {
+  font-weight: 200;
+}
+
+.bolder_text {
+  font-weight: 600;
+}
+
+.overlay {
+  background-color: rgba(255, 255, 255, 0.97);
+  width: 100%;
+  padding: 10px 0;
+  margin: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+  position: absolute;
+  top: 60px;
+  left: 0;
+  z-index: 50;
+  -moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.09);
+  -webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.09);
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.09);
+}
+
+.overlay > * {
+  width: 50%;
+  float: left;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.overlay::after {
+  content: '\a';
+  clear: both;
+  display: block;
+}
+
+.overlay h1 {
+  text-align: left;
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding-left: 20px;
+  line-height: middle;
+  height: 100%;
+}
+
+.counter {
+  text-align: center;
+  border-radius: 6px;
+  width: 50%;
+}
+
+figcaption {
+  margin-top: 10px;
+  color: #b3b3b3;
+  font-size: .9em;
+  line-height: .6em;
+  display: inline-block;
+}
+
+.big_text {
+  font-size: 4em;
+  line-height: 1em;
+  color: #383838;
+  font-family: 'Open Sans Condensed', sans-serif;
+  
+}
+
+/* @group Radio Button Stuff */
+
+input[type=radio] {
+  position: absolute;
+    left: -1000px;
+}
+
+input[type=radio] + label {
+  padding: 10px;
+  width: 25%;
+  display: inline-block;
+  color: #717171;
+  font-weight: 500;
+  text-shadow: 0 1px 0 #ffffff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+  float: left;
+  position: relative;
+}
+
+/*input[type=radio]:first-of-type + label {
+  padding-left: 0;
+}*/
+
+input[type=radio]:checked + label .ball {
+  width: 56px; height: 56px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: 3px dashed #7a7a7a;
+  margin: 10px 0;
+  left: 50%;
+  top: -60px;
+  margin-left: -25%;
+  position: absolute;
+  
+  -webkit-transition: all 400ms ease;
+  -moz-transition: all 400ms ease;
+  -ms-transition: all 400ms ease;
+  -o-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+
+/*input[type=radio]:active:not(:checked) + label::before {
+  border: 3px dashed #7a7a7a;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.148, rgba(0, 0, 0, 0.07)), to(rgba(0, 0, 0, 0)));
+  background-image: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0.07) 14.8%, rgba(0, 0, 0, 0) 100%);
+  -moz-box-shadow: inset 0 1px 12px #ffffff;
+  -webkit-box-shadow: inset 0 1px 12px #ffffff;
+  box-shadow: inset 0 1px 12px #ffffff;
+}*/
+
+.ball {
+  width: 0px; height: 0px;
+  border: 1px solid #a4b936;
+  background-color: #b7cb51;
+  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+input[type=radio]:checked + .ball {
+  width: 60px; height: 60px;
+}
+
+input[type=radio]:checked + label:active::before {
+  margin: 10px 0;
+}
+
+/* @end */
