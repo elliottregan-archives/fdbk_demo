@@ -2,16 +2,22 @@ html {
   background: url(noise.png) #f9f9f9;
   font-family: "Open Sans", sans-serif;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
+  color: #3e3e3e;
+  text-shadow: 0 2px 1px #ffffff;
+  padding: 0;
+  margin: 0;
 }
 
 body {
   margin: 0;
+  padding: 0;
+  padding-bottom: 80px;
 }
 
 fieldset {
   border: none;
-  margin: 0;
-  padding: 0;
+  margin: 20px 10px;
+  padding: 10px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -21,9 +27,17 @@ fieldset {
   user-select: none;
 }
 
+fieldset.radio {
+  padding: 0;
+}
+
+legend, fieldset:not(.radio) label {
+  font-size: 1.6em;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
 legend {
-  font-size: 2em;
-  padding: 20px;
+  padding: 20px 20px 10px; 
 }
 
 textarea {
@@ -47,10 +61,15 @@ textarea {
   text-shadow: 0 1px 1px #ffffff;
 }
 
+.break {
+  height: 40px;
+}
+
 header {
   height: 60px; width: 100%;
   margin-bottom: 140px;
   background-color: #ffffff;
+  text-shadow: none;
 }
 
 header > * {
@@ -109,6 +128,9 @@ header .tagline {
   -moz-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.09);
   -webkit-box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.09);
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.09);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .overlay > * {
@@ -164,8 +186,17 @@ input[type=radio] {
   left: -1000px;
 }
 
+form {
+  padding: 0;
+  margin: 0;
+}
+
 label {
   position: relative;
+}
+
+fieldset:first-of-type legend {
+  padding-top: 0;
 }
 
 input[type=radio] + label {
@@ -195,7 +226,7 @@ input[type=radio] + label {
 
 .target {
   width: 50px; height: 50px;
-  display: compact;
+  display: block;
   border: 3px dashed #7a7a7a;
   position: relative;
   -webkit-border-radius: 50%;
@@ -228,6 +259,14 @@ input[type=radio] + label {
   -ms-transition: all 200ms ease;
   -o-transition: all 200ms ease;
   transition: all 200ms ease;
+  
+  -webkit-transition: all 400ms cubic-bezier(0.280, 0.000, 0.345, 1); /* older webkit */
+  -webkit-transition: all 400ms cubic-bezier(0.280, 0.000, 0.345, 1.650);
+  -moz-transition: all 400ms cubic-bezier(0.280, 0.000, 0.345, 1.650);
+  -ms-transition: all 400ms cubic-bezier(0.280, 0.000, 0.345, 1.650);
+  -o-transition: all 400ms cubic-bezier(0.280, 0.000, 0.345, 1.650);
+  transition: all 400ms cubic-bezier(0.280, 0.000, 0.345, 1.650); /* custom */
+  
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -244,6 +283,59 @@ input[type=radio]:checked + label .ball {
   -webkit-transform: none;
   left: -3px;
   top: -3px;  
+}
+
+/* @end */
+
+/* @group Button Stuff */
+
+button {
+  margin: 20px 10%;
+  width: 80%;
+  padding:10px;
+	font-size: 1.4em;
+	position:relative;
+	color:#fff;
+	border: 1px solid #708625;
+  -webkit-box-shadow: inset 0 1px 0 #b7e821, 0px 1px 0px #fff;
+	-moz-box-shadow: inset 0 1px 0 #b7e821, 0px 1px 0px #fff;
+	box-shadow: inset 0 1px 0 #b7e821, 0px 1px 0px #fff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.53);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgb(159, 192, 50)), to(rgb(175, 210, 63))) #afd23f;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+button::before {
+	background-color:#ccd0d5;
+	content:"\a";
+	display:block;
+	position:absolute;
+	width:100%;
+	height:100%;
+	padding:8px;
+	left:-8px;
+	top:-8px;
+	z-index:-1;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0px 1px 1px #909193, 0px 1px 0px #fff;
+	-moz-box-shadow: inset 0px 1px 1px #909193, 0px 1px 0px #fff;
+	box-shadow: inset 0px 1px 1px #909193, 0px 1px 0px #fff;
+}
+
+button:active {
+	padding-bottom:9px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:11px;
+	top:1px;
+	background-image: -webkit-gradient(linear, left bottom, left top, from(rgb(166, 199, 59)), to(rgb(142, 172, 50)));
 }
 
 /* @end */
