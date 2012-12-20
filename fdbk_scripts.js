@@ -9,9 +9,6 @@ $(document).ready( function() {
       top : currentScrollTop
     })
   })
-  
-  window.addEventListener('load', function() {
-      new FastClick(document.body);
-  }, false);
-  
+
+//new FastClick(document.body);
 })
