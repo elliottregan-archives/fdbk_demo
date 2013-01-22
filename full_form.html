@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Full form page</title>
+  
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" href="fdbk_demo.css" type="text/css" />
+  
+  <script src="jquery_1.9.js" type="text/javascript"></script>
+<!--  <script src="fastclick.js" type="text/javascript"></script>-->
+  <script src="fdbk_scripts.js" type="text/javascript"></script>
+  <script src="mobile_slider/mobile-range-slider.js" type="text/javascript"></script>
+
+</head>
+<body>
+  <header>
+    <div class="logo"></div>
+    <div class="tagline"><span class="light_text">instant</span> <span class="bolder_text">Feedback</span></div>
+  </header>
+  
+  <fieldset>
+    <div id="slider1" class="slider">
+      <div class="track"></div>
+      <div class="knob" role="slider"></div>
+    </div>
+    
+<!--    <input type="text" id="output1" />-->
+  </fieldset>
+  
+  
+  <script type="text/javascript">
+      
+      var input1 = document.getElementById('output1');
+      
+      var slider1 = new MobileRangeSlider('slider1', {
+        value: 5,
+        min: 0,
+        max: 10,
+        change: function(percentage) {
+          input1.value = percentage;
+        }
+      });
+      
+      input1.addEventListener('change', function(){
+        slider1.setValue(input1.value);
+      });
+      
+    </script>
+    
+    <fieldset>
+      <legend>Choose several options below:</legend>
+        <input type="checkbox" name="a_01" value="a_01" id="a_01" /><label for="a_01">Answer 1</label><br />
+        <input type="checkbox" name="a_01" value="a_01" id="a_02" /><label for="a_02">Answer 2</label><br />
+        <input type="checkbox" name="a_01" value="a_01" id="a_03" /><label for="a_03">Answer3</label><br />
+    </fieldset>
+    
+    <fieldset>
+      <legend>Choose one options below:</legend>
+        <input type="radio" name="a_01" value="a_01" id="a_21" /><label for="a_21">Answer 1</label><br />
+        <input type="radio" name="a_01" value="a_01" id="a_22" /><label for="a_22">Answer 2</label><br />
+        <input type="radio" name="a_01" value="a_01" id="a_23" /><label for="a_23">Answer3</label><br />
+    </fieldset>
+    
+    <fieldset>
+      <legend>True or false?:</legend>
+        <input type="radio" name="a_01" value="a_01" id="a_31" /><label for="a_31">True</label>
+        <input type="radio" name="a_01" value="a_01" id="a_32" /><label for="a_32">False</label><br />
+    </fieldset>
+    
+    <fieldset>
+      <label for="select">Choose an option form the dropdown:</label><br>
+      <select id="select">
+        <option>!</option>
+        <option>!!</option>
+        <option>!!!</option>
+      </select>
+    </fieldset>
+    
+    <fieldset>
+      <label for="text">Free Response:</label>
+      <textarea></textarea>
+    </fieldset>
+    
+    <fieldset>
+      <button type="reset">Share Feedback</button>
+    </fieldset>
+  
+</body>
+</html>
