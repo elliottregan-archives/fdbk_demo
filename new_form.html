@@ -39,6 +39,10 @@
 
   <div class="wrapper">
     <button id="new_q" class="dotted">+ add new question</button>
+    
+    <ul id="q_list">
+    </ul>
+    
   </div>
   
   <section id="q_panel" class="animated bounceInUp">
@@ -81,7 +85,7 @@
         
         </li>
         
-        <li>
+        <li data-qtype='mcMultiSelect'>
           <h2>Multiple Choice: Multi-select</h2>
           <p>A question followed by a series of possible answers. Any number can be chosen.</p>
           <fieldset>

@@ -33,4 +33,32 @@ $(document).ready( function() {
     $(this).children('p, fieldset').slideDown();
   })
   
+  
+  
+  				var q_Id = 0;
+  				var test = 'testing';
+  				
+  				var mcMultiSelect = '<input type="text" name="multi_select_title" placeholder="add your question here." /><input type="checkbox" name="" value="" id="q00_a00"/><label for="q00_a00"></label><button class="new_input">+</button>'
+  
+  				$('#q_panel .close').click(function(){
+  
+  					//Create and add the form element
+            if ( $('#q_panel li.selected').data('qtype') === 'mcMultiSelect') {
+              $(mcMultiSelect).appendTo('#q_list');
+            }else {
+              $('<li>').attr('id', 'qid_' + q_Id)
+                
+  						  .text(test)
+  
+  						  .appendTo('#q_list');
+            }
+            
+  					//Iterate id number
+  
+  					q_Id++;
+  
+  				});
+  
+  
+  
 })
