@@ -38,10 +38,11 @@
   </section>-->
 
   <div class="wrapper">
-    <button id="new_q" class="dotted">+ add new question</button>
     
     <ul id="q_list">
     </ul>
+    
+    <button id="new_q" class="dotted">+ add new question</button>
     
   </div>
   
@@ -52,7 +53,7 @@
     </header>
     <div class="wrapper">
       <ul id="q_types">
-        <li>
+        <li data-qtype='rangeSlider'>
           <h2>Range Slider</h2>
           <fieldset>
             <div id="slider1" class="slider">
@@ -62,23 +63,23 @@
             
             <script type="text/javascript">
                 
-                var input1 = document.getElementById('output1');
-                
-                var slider1 = new MobileRangeSlider('slider1', {
-                  value: 5,
-                  min: 0,
-                  max: 10,
-                  change: function(percentage) {
-                    input1.value = percentage;
-                  }
-                });
-                
-                input1.addEventListener('change', function(){
-                  slider1.setValue(input1.value);
-                });
-                
-              </script>
-            </fieldset>
+              var input1 = document.getElementById('output1');
+              
+              var slider1 = new MobileRangeSlider('slider1', {
+                value: 5,
+                min: 0,
+                max: 10,
+                change: function(percentage) {
+                  input1.value = percentage;
+                }
+              });
+              
+              input1.addEventListener('change', function(){
+                slider1.setValue(input1.value);
+              });
+              
+            </script>
+          </fieldset>
             
             
             
@@ -96,7 +97,7 @@
           </fieldset>
         </li>
         
-        <li>
+        <li data-qtype='mcSingleSelect'>
           <h2>Multiple Choice: Single-select</h2>
           <p>A question followed by a series of possible answers. Only one may be chosen.</p>
           <fieldset>
@@ -106,7 +107,7 @@
               <input type="radio" name="a_01" value="a_01" id="a_23" /><label for="a_23">Answer3</label><br />
           </fieldset>
         </li>
-        <li>
+        <li data-qtype='dropdown'>
           <h2></h2>
           <fieldset>
             <label for="select">Choose an option form the dropdown:</label><br>
