@@ -422,6 +422,11 @@ button.dotted {
   background-color: #ffffff;
 }
 
+#q_list li.selected {
+  border-style: solid;
+  background-color: #ffffff;
+}
+
 /* @group Slider Stuff */
 
 .slider {

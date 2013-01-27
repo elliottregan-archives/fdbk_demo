@@ -35,32 +35,58 @@ $(document).ready( function() {
   
   
 				var q_Id = 0;
+				var a_Id = 0
 				var qType = 'no type selected';
   				
 				function getQuestionType() {
 				  return $('#q_panel li.selected').data('qtype');
 				}
-				  
-				function mcMultiSelect(q_Id) {
 				
-
-				 return "<li> \
+				function getAnswerType() {
+				  return $('#q_list li.selected').data('qtype');
+				}
+				
+				function setSelectedQuestion() {
+				  $('#q_list li').removeClass('selected');
+				}
+				
+				var mcMultiSelect = function(q_Id) {
+				
+				  var question = "<li data-qtype='mcMultiSelect'> \
   				  <input type='text' name='q" + q_Id + "_question' placeholder='add your question here.' /> \
   				  <ul class='answers'> \
   				  </ul> \
-  				  <button id='q" + q_Id + "_add_answer class='new_input'>+ add new answer</button> \
+  				  <button id='q" + q_Id + "_add_answer' class='new_input'>+ add new answer</button> \
 				  </li>"
+				  
+				  var answer = "<li> \
+				      <input type='checkbox' name='q" + q_Id + "_input'/> \
+				      <input type='text' name='q" + q_Id + "_label' placeholder='add the first answer'/> \
+				    <li> "
+				  
+				  return [question, answer];
 				}
-
-        function mcMultiSelectAnswer(q_Id) {
-          return "<li> \
-            <input type='checkbox' name='q" + q_Id + "_input'/> \
-            <input type='text' name='q" + q_Id + "_label placeholder='add the first answer'/> \
-          <li> "
-        }
-          
-        function rangeSlider(q_Id) {
-          "<fieldset> \
+				
+				var mcSingleSelect = function(q_Id) {
+				
+				  var question = "<li data-qtype='mcSingleSelect'> \
+					  <input type='text' name='q" + q_Id + "_question' placeholder='add your question here.' /> \
+					  <ul class='answers'> \
+					  </ul> \
+					  <button id='q" + q_Id + "_add_answer' class='new_input'>+ add new answer</button> \
+				  </li>"
+				  
+				  var answer = "<li> \
+  			      <input type='radio' name='q" + q_Id + "_input'/> \
+  			      <input type='text' name='q" + q_Id + "_label' placeholder='add the first answer'/> \
+				    <li> "
+				  
+				  return [question, answer];
+				}
+                 
+        var rangeSlider = function(q_Id) {
+          var question = "<li data-qtype='rangeSlider'> \
+            <input type='text' name='q" + q_Id + "_question' placeholder='add your question here.' /> \
             <div id='slider" + q_Id + "' class='slider'> \
               <div class='track'></div> \
               <div class='knob' role='slider'></div> \
@@ -78,19 +104,21 @@ $(document).ready( function() {
               input1.addEventListener('change', function(){ \
                 slider1.setValue(input1.value); \
               }); \
-            </script> \
-          </fieldset>"
+            </script>"
+          
+          return [question];
         }
         
-        function addQuestion(qType) {
-          if (qType == "mcMultiSelect") {
-            $(mcMultiSelect(q_Id)).appendTo('#q_list');
+        var addQuestion = function(qType) {
+          $('#q_list li').removeClass('selected');
+          if (qType == 'mcMultiSelect') {
+            $(mcMultiSelect(q_Id)[0]).appendTo('#q_list').addClass('selected');
           }
           else if (qType == "rangeSlider") {
-            $(rangeSlider(q_Id)).appendTo('#q_list');
+            $(rangeSlider(q_Id)[0]).appendTo('#q_list').addClass('selected');
           }
-          else if (qType == "mcMultiSelect") {
-            $(mcSingleSelect(q_Id)).appendTo('#q_list');
+          else if (qType == "mcSingleSelect") {
+            $(mcSingleSelect(q_Id)[0]).appendTo('#q_list').addClass('selected');
           }
           else {
             $('<li>').attr('id', 'qid_' + q_Id).text("no answer selected").appendTo('#q_list');
@@ -98,38 +126,43 @@ $(document).ready( function() {
           
           //Iterate id number
           q_Id++;
-          console.log(q_Id)
         }
         
         function addAnswer(qType) {
           if (qType == "mcMultiSelect") {
-            mcMultiSelectAnswer.appendTo('#answers');  
+            $(mcMultiSelect(qType)[1]).appendTo('#q_list > li.selected .answers');  
           }
           else if (qType == "rangeSlider") {
-            rangeSlider.appendTo('#answers');
+            $(rangeSlider(qType)[1]).appendTo('#q_list > li.selected .answers');
           }
-          else if (qType == "mcMultiSelect") {
-            rangeSlider.appendTo('#answers');
+          else if (qType == "mcSingleSelect") {
+            $(mcSingleSelect(qType)[1]).appendTo('#q_list > li.selected .answers');
           }
           else {
             $('<li>').attr('id', 'qid_' + q_Id)
-              
   					  .text("no answer selected")
-  
-  					  .appendTo('#q_list');
+  					  .appendTo('li.selected .answers');
           }
         }
   
   			$('#q_panel .close').click(function(){
-            qType = getQuestionType()
-  					//Create and add the form element
-            addQuestion(qType);
+          qType = getQuestionType()
+          addQuestion(qType);
+          addAnswer(qType);
+          
+          $('#q_panel li').siblings().children('p, fieldset').slideUp();
+          $('#q_panel li').removeClass('selected');
+          
   			});
+  			  			
+  			$('#q_list > li').live('mousedown',function() {
+  			  $(this).siblings().removeClass('selected');
+  			  $(this).addClass('selected');
+  			})
   			
-  			$('.new_input').click( function() {
-    			qType = getQuestionType()
-    			//Create and add the form element
-    			addAnswer(qType);
+  			$('.new_input').live('click', function() {
+  			  addAnswer(qType);
+  			  console.log('clicked on new answer button')
   			})
   
   
