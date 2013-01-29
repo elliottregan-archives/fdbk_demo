@@ -30,10 +30,19 @@ ul {
 
 .wrapper {
   padding: 0 20px;
+  display: none;
+}
+
+.wrapper.visible {
+  display: block;
 }
 
 .wrapper.tight > *{
   padding: 0 20px;
+}
+
+#q_panel .wrapper {
+  display: block;
 }
 
 fieldset {
@@ -476,3 +485,26 @@ button.dotted {
 }
 
 /* @end */
+
+.campaign_info {
+  float: right;
+}
+
+#campaign_list li {
+  background-color: #ffffff;
+  padding: 4px;
+}
+
+.campaign_info button {
+  font-size: .8em;
+  margin: 10px auto;
+  padding: 8px;
+}
+
+.campaign_info:after {
+  content: "\a";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}

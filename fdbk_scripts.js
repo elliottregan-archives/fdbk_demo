@@ -162,9 +162,33 @@ $(document).ready( function() {
   			
   			$('.new_input').live('click', function() {
   			  addAnswer(qType);
-  			  console.log('clicked on new answer button')
   			})
   
+  var steps = [form, reward, social, permissions, url]
+  var currentStep = 0
+    
+  function forwardPage() {
+    if (currentStep < (steps.length - 1)) {
+      $(steps[currentStep]).fadeOut();
+      currentStep = currentStep + 1;
+      $(steps[currentStep]).delay(400).fadeIn();
+    } 
+  }
   
+  function backPage() {
+    if (currentStep > 0) {
+      $(steps[currentStep]).fadeOut();
+      currentStep = currentStep - 1;
+      $(steps[currentStep]).delay(400).fadeIn();
+    }
+  }
+  
+  $('#next').click(function() {
+    forwardPage();
+  })
+  
+  $('#back').click(function() {
+    backPage();
+  })
   
 })

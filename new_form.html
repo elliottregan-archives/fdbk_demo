@@ -25,7 +25,8 @@
 <body>
 
   <header>
-    <button class="right"></button>
+    <button id="back" class="left"><-</button>
+    <button id="next" class="right">-></button>
     <h1>create your survey</h1>  
   </header>
 
@@ -37,13 +38,9 @@
     </ul>
   </section>-->
 
-  <div class="wrapper">
-    
-    <ul id="q_list">
-    </ul>
-    
+  <div id="form" class="wrapper visible">
+    <ul id="q_list"></ul>
     <button id="new_q" class="dotted">+ add new question</button>
-    
   </div>
   
   <section id="q_panel" class="animated bounceInUp">
@@ -123,6 +120,41 @@
       </ul>
     </div>  
   </section>
+  
+  <div id="reward" class="wrapper">
+    <form method="post" action="">
+      <input type="text" name="title" value="" placeholder="Gift Title" />
+      <input type="text" name="description" value="" placeholder="Description"/>
+      <input type="text" name="terms" value="" placeholder="Terms and Conditions"/>
+    </form>
+  </div>
+  
+  <div id="social" class="wrapper">
+    <p>(buttons to connect various social media accounts.)</p>
+  </div>
+  
+  <div id="permissions" class="wrapper">
+    <label for="emails">Send email invitations to others to help manage this campaign.</label>
+    <input type="text" name="name" value="" placeholder="name"/>
+    <input type="email" name="email" value="" placeholder="email"/>
+    <fieldset>
+      <input type="radio" name="view" id="view"/>
+      <label for="view">View Analytics</label>
+      <input type="radio" name="edit" id="edit"/>
+      <label for="edit">View and edit details</label>
+    </fieldset>
+    <button class="new_invite">Send</button>
+  </div>
+  
+  <div id="url" class="wrapper">
+    <label for="url">Choose a URL for your access point</label>
+    <input type="text" name="url" id="url" />
+    <label for="access_points">or choose a previous access point.</label>
+    <select>
+      <option>407 9th St, Brooklyn, NY</option>
+    </select>
+    <button>Launch Campaign!</button>
+  </div>
   
 </body>
 </html>
