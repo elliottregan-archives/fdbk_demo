@@ -56,7 +56,7 @@ $(document).ready( function() {
   				  <input type='text' name='q" + q_Id + "_question' placeholder='add your question here.' /> \
   				  <ul class='answers'> \
   				  </ul> \
-  				  <button id='q" + q_Id + "_add_answer' class='new_input'>+ add new answer</button> \
+  				  <button id='q" + q_Id + "_add_answer' class='new_input dotted'>+ add new answer</button> \
 				  </li>"
 				  
 				  var answer = "<li> \
@@ -73,7 +73,7 @@ $(document).ready( function() {
 					  <input type='text' name='q" + q_Id + "_question' placeholder='add your question here.' /> \
 					  <ul class='answers'> \
 					  </ul> \
-					  <button id='q" + q_Id + "_add_answer' class='new_input'>+ add new answer</button> \
+					  <button id='q" + q_Id + "_add_answer' class='new_input dotted'>+ add new answer</button> \
 				  </li>"
 				  
 				  var answer = "<li> \
@@ -189,6 +189,10 @@ $(document).ready( function() {
   
   $('#back').click(function() {
     backPage();
+    if (currentStep == 0) {
+      console.log('back')
+      document.location='dashboard.html'
+    }
   })
   
 })

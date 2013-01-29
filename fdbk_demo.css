@@ -30,10 +30,13 @@ ul {
 
 .wrapper {
   padding: 0 20px;
+}
+
+.page {
   display: none;
 }
 
-.wrapper.visible {
+.page.visible {
   display: block;
 }
 
@@ -352,20 +355,17 @@ button {
   margin: 20px 0;
   width: 100%;
   padding:10px;
-	font-size: 1.4em;
-	position:relative;
+  position:relative;
 	color: #363636;
-	border: 1px solid #94b033;
+	border: 1px solid #6e6e6e;
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background-color: #afd23f;
-  font-weight: normal;
-  font-style: normal;
-  font-family: 'Open Sans', sans-serif;
+  background-color: #939393;
+  font: normal normal 1.4em 'Open Sans', sans-serif;
 }
 
 button.fb {
@@ -394,8 +394,12 @@ header button.right {
   float: right;
 }
 
+header button.left {
+  float: left;
+}
+
 button.dotted {
-  border: 2px dashed #9fc32d;
+  border: 2px dashed #808080;
   background-color: rgba(253, 253, 253, 0);
   color: #747474;
 }
@@ -466,7 +470,7 @@ button.dotted {
   height: 10px;
   top: 20px;
   width: 50px;
-  background-color: rgb(175, 210, 63);
+  background-color: rgb(137, 137, 137);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -481,7 +485,7 @@ button.dotted {
   top: -30px;
   left: 30%;
   border: 10px solid transparent;
-  border-bottom: 20px solid #afd23f;
+  border-bottom: 20px solid #878787;
 }
 
 /* @end */
@@ -501,7 +505,7 @@ button.dotted {
   padding: 8px;
 }
 
-.campaign_info:after {
+.campaign_info::after {
   content: "\a";
   display: block;
   height: 0;

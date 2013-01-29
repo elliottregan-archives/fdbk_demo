@@ -38,9 +38,9 @@
     </ul>
   </section>-->
 
-  <div id="form" class="wrapper visible">
+  <div id="form" class="wrapper page visible">
     <ul id="q_list"></ul>
-    <button id="new_q" class="dotted">+ add new question</button>
+    <button id="new_q">+ add new question</button>
   </div>
   
   <section id="q_panel" class="animated bounceInUp">
@@ -48,7 +48,7 @@
       <button class="right close">x</button>
       <h1>Question Types:</h1>
     </header>
-    <div class="wrapper">
+    <div class="wrapper page">
       <ul id="q_types">
         <li data-qtype='rangeSlider'>
           <h2>Range Slider</h2>
@@ -121,7 +121,7 @@
     </div>  
   </section>
   
-  <div id="reward" class="wrapper">
+  <div id="reward" class="wrapper page">
     <form method="post" action="">
       <input type="text" name="title" value="" placeholder="Gift Title" />
       <input type="text" name="description" value="" placeholder="Description"/>
@@ -129,11 +129,11 @@
     </form>
   </div>
   
-  <div id="social" class="wrapper">
+  <div id="social" class="wrapper page">
     <p>(buttons to connect various social media accounts.)</p>
   </div>
   
-  <div id="permissions" class="wrapper">
+  <div id="permissions" class="wrapper page">
     <label for="emails">Send email invitations to others to help manage this campaign.</label>
     <input type="text" name="name" value="" placeholder="name"/>
     <input type="email" name="email" value="" placeholder="email"/>
@@ -146,14 +146,14 @@
     <button class="new_invite">Send</button>
   </div>
   
-  <div id="url" class="wrapper">
+  <div id="url" class="wrapper page">
     <label for="url">Choose a URL for your access point</label>
     <input type="text" name="url" id="url" />
     <label for="access_points">or choose a previous access point.</label>
     <select>
       <option>407 9th St, Brooklyn, NY</option>
     </select>
-    <button>Launch Campaign!</button>
+    <a href="dashboard.html"><button>Launch Campaign!</button></a>
   </div>
   
 </body>
