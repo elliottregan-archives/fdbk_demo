@@ -176,7 +176,7 @@ $(document).ready( function() {
   }
   
   function backPage() {
-    if (currentStep > 0) {
+    if (currentStep >= 0) {
       $(steps[currentStep]).fadeOut();
       currentStep = currentStep - 1;
       $(steps[currentStep]).delay(400).fadeIn();
@@ -188,11 +188,17 @@ $(document).ready( function() {
   })
   
   $('#back').click(function() {
-    backPage();
-    if (currentStep == 0) {
+    if (currentStep > 0) {
+      backPage();
+    }
+    else if (currentStep == 0) {
       console.log('back')
       document.location='dashboard.html'
     }
+  })
+  
+  $('#launch').click( function() {
+    $('#login_panel').fadeIn();
   })
   
 })

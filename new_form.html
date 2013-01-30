@@ -144,6 +144,11 @@
       <label for="edit">View and edit details</label>
     </fieldset>
     <button class="new_invite">Send</button>
+    <h2>Invites sent:</h2>
+    <ul>
+      <li><button>resend</button>John Doe<small class="status">pending...</small></li>
+      <li>Jane Roberts<small class="status">accepted</small></li>
+    </ul>
   </div>
   
   <div id="url" class="wrapper page">
@@ -153,8 +158,17 @@
     <select>
       <option>407 9th St, Brooklyn, NY</option>
     </select>
-    <a href="dashboard.html"><button>Launch Campaign!</button></a>
+    <button id="launch">Launch Campaign!</button>
   </div>
+  
+  <section id="login_panel" class="overlay wrapper">
+    <h1>Your Feedback was sent!</h1>
+    <button>Facebook</button>
+    <button>Twitter</button>
+    <p>or the old fashioned way.</p>
+    <input type="email" placeholder="email"/>
+    <a href="dashboard.html"><button>Signup</button></a>
+  </section>
   
 </body>
 </html>
