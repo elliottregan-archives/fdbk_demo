@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Elliott's FDBK Demo</title>
+  
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,400,300,200|Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" href="fdbk_demo.css" type="text/css" />
+  <link rel="stylesheet" href="animate.css" type="text/css" />
+  <script src="jquery.js" type="text/javascript"></script>
+<!--  <script src="fastclick.js" type="text/javascript"></script>-->
+
+  <script src="fdbk_scripts.js" type="text/javascript"></script>
+  <script src="mobile_slider/mobile-range-slider.js" type="text/javascript"></script>
+  
+  
+  
+</head>
+<body>
+
+  <header>
+    <button id="back" class="left"><-</button>
+    <button id="next" class="right">-></button>
+    <h1>create your survey</h1>  
+  </header>
+
+<!--  <section class="steps">
+    <ul class="verticle_steps">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  </section>-->
+
+  <div id="form" class="wrapper page visible">
+    <ol id="q_list">
+      <li><h2>How likely are you to recommend this establishment to your friends?</h2></li>
+      <li><h2>Public Tips:</h2></li>
+      <li><h2>Private Comments:</h2></li>
+    </ol>
+  </div>
+  
+  <div id="reward" class="wrapper page">
+    <form method="post" action="">
+      <input type="text" name="title" value="" placeholder="Gift Title" />
+      <input type="text" name="description" value="" placeholder="Description"/>
+      <input type="text" name="terms" value="" placeholder="Terms and Conditions"/>
+    </form>
+  </div>
+  
+  <div id="social" class="wrapper page">
+    <ul>
+      <li>Facebook Account<small class="status">connected</small></li>
+      <li>Twitter Account<small class="status">connected</small></li>
+    </ul>
+    <button class="dotted">Add new social account</button>
+  </div>
+  
+  <div id="permissions" class="wrapper page">
+    <label for="emails">Send email invitations to others to help manage this campaign.</label>
+    <input type="text" name="name" value="" placeholder="name"/>
+    <input type="email" name="email" value="" placeholder="email"/>
+    <fieldset>
+      <input type="radio" name="permission" id="read"/>
+      <label for="read">View Analytics</label>
+      <input type="radio" name="permission" id="readwrite"/>
+      <label for="readwrite">View and edit details</label>
+    </fieldset>
+    <button class="new_invite">Send</button>
+    <hr>
+    <h2>Invites sent:</h2>
+    <ul>
+      <li><button>resend</button>John Doe<small class="status">pending...</small></li>
+      <li>Jane Roberts<small class="status">accepted</small></li>
+    </ul>
+  </div>
+  
+  <div id="url" class="wrapper page">
+    <label for="url">Choose a URL for your access point</label>
+    <input type="text" name="url" id="url" value="fdbk.com/business_name"/>
+    <label for="access_points">or choose a previous access point.</label>
+    <select>
+      <option>407 9th St, Brooklyn, NY</option>
+    </select>
+  </div>
+  
+  <section id="login_panel" class="overlay wrapper">
+    <h1>Your Feedback was sent!</h1>
+    <button>Facebook</button>
+    <button>Twitter</button>
+    <p>or the old fashioned way.</p>
+    <input type="email" placeholder="email"/>
+    <a href="dashboard.html"><button>Signup</button></a>
+  </section>
+  <div class="wrapper">
+    <button class="right"><a href="dashboard.html">Save Changes</a></button>
+    <button><a href="dashboard.html">Discard Changes</a></button>
+  </div>
+</body>
+</html>
